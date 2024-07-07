@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trial Grounds</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='game.css')}}" />
+    <link rel="icon" href="{{url_for('static', filename='game_favicon.png')}}" />
+</head>
+
+<body>
+    {% if g.user %}
+    <h1>Welcome to the Trial Grounds {{name}}</h1>
+    <section id="stages">
+        <h3>Stages:</h3>
+        <table id="stage_list">
+            <tr>
+                <th></th>
+                <th>Theme</th>
+                <th>Uprising</th>
+                <th>Infiltration</th>
+                <th>Coup d'etat</th>
+            </tr>
+            <tr>
+                <!-- <td><a href="{{url_for('game', stage='1')}}">Stage 1</a></td> -->
+                <td><a href="{{url_for('game')}}">Stage 1</a></td>
+                <td>Demons</td>
+                <td>2 waves</td>
+                <td>20 volleys of arrows</td>
+                <td>Lava area attacks</td>
+            </tr>
+            <tr>
+                <td><a href="">Stage 2</a></td>
+                <td colspan="4">Coming Soon...</td>
+            </tr>
+        </table>
+    </section>
+    <section id="story">
+        <h3>Story</h3>
+        <p>A world filled with monsters need adventurers to keep it safe. But it's not like anyone can become an
+            adventure.
+            To become an adventurer you need to pass the trials set by the Adventurers' Guild. By passing each stage you
+            can rank up
+            your adventurer level.
+        </p>
+    </section>
+    <section id="tutorial">
+        <h3>How To Play</h3>
+        <section id="inner_tutorial">
+            <p>Movement:</p>
+            <ul>
+                <li>
+                    Move Up - Press W or Press Up Arrow
+                </li>
+                <li>
+                    Move Down - Press S or Press Down Arrow
+                </li>
+                <li>
+                    Move Right - Press D or Press Right Arrow
+                </li>
+                <li>
+                    Move Left - Press A or Press Left Arrow
+                </li>
+            </ul>
+            <p>Abilities:</p>
+            <ul>
+                <li>Time Stop (Press 1) - With this ability you can restrict enemy movement for a short while. You won't
+                    get damaged when passing
+                    through during this time, but you can still deal damage. It has a medium cool down period (Blue).
+                </li>
+                <li>Heal (Press 3) - With this ability you can heal yourself for 50 HP. It has a long cool down period
+                    (Green).</li>
+            </ul>
+            <p>Attacks:</p>
+            <ul>
+                <li>Melee (Press Space) - Get close to the enemy and swing your sword to deal damage. This has no cool
+                    down.</li>
+                <li>Ranged Attack (Left Mouse Click) - You can shoot a compact magic missile to a nearby enemy to deal
+                    damage.
+                    It has a very short cool down period (Orange).</li>
+            </ul>
+            <p>The cool downs for these abilities/attacks can be seen above the player. The marker will disappear when
+                it is used and
+                will reappear when attack/ability is ready to be used again.</p>
+            <p>In each stage, you must go through 3 trials:</p>
+            <ol>
+                <li>Uprising: Fight a few waves of small, fast enemies.</li>
+                <li>Infiltration: Dodge obstacles to and try to survive till the timer ends.</li>
+                <li>Coup D'état: Fight the final boss of the stage.</li>
+            </ol>
+        </section>
+    </section>
+    {% else %}
+    <section id="intro">
+        <h1>Trial Grounds</h1>
+        <p>In each stage, you must go through 3 trials:</p>
+        <ol>
+            <li>Uprising: Fight a few waves of small, fast enemies.</li>
+            <li>Infiltration: Dodge obstacles to and try to survive till the timer ends.</li>
+            <li>Coup D'état: Fight the final boss of the stage.</li>
+        </ol>
+        <p>You need to be logged in to play.</p>
+        <p><a href="{{url_for('login')}}">Login or Register Here</a></p>
+    </section>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trial Grounds</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='game.css')}}" />
+    <link rel="icon" href="{{url_for('static', filename='game_favicon.png')}}" />
+</head>
+
+<body>
+    <section class="form">
+        <form action="" method="post" novalidate>
+            {{form.hidden_tag()}}
+            <table>
+                <tr>
+                    <td>{{form.id.label}} </td>
+                    <td>{{form.id()}}
+                        {% for error in form.id.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{form.password.label}}</td>
+                    <td>
+                        {{form.password()}}
+                        {% for error in form.password.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{form.password2.label}}</td>
+                    <td>
+                        {{form.password2()}}
+                        {% for error in form.password2.errors %}
+                        {{error}}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{form.submit()}}</td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+html {
+    background-color: #838997;
+    font-family: 'Bahnschrift';
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+canvas {
+    border: rgb(55, 55, 55) solid 10px;
+    margin: 0px auto;
+    padding: 0;
+    display: block;
+    image-rendering: pixelated;
+    cursor: url(static/cross_whole_hit.png), auto;
+}
+
+#stats {
+    text-align: center;
+    color: black;
+}
+
+table, th, tr, td{
+    border: none;
+    padding: 8px;
+    margin: 20px auto;
+}
+
+#stage_list, #stage_list th, #stage_list tr, #stage_list td  {
+    margin: 20px 0px;
+    padding: 10px;
+    border: black solid 2px;
+    border-collapse: collapse;
+}
+
+/* #inner_tutorial {
+    display: none;
+    position: relative;
+}
+
+#tutorial:hover    {
+    position: relative;
+} 
+
+#tutorial:hover #inner_tutorial, #tutorial:focus #inner_tutorial{
+    display: block;
+} */

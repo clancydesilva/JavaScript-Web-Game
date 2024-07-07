@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Trial Grounds</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='game.css')}}" />
+        <link rel="icon" href="{{url_for('static', filename='game_favicon.png')}}" />
+        <script src="{{url_for('static', filename='game.js')}}" type="module"></script>
+    </head>
+    <body>
+        <h1 id="wave"></h1>
+        <p id="stats"></p>
+        <!-- <div id="{{stage}}"></div> -->
+
+        <canvas width="960" height="576"></canvas>
+    </body>
+</html>
